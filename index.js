@@ -39,6 +39,7 @@ i.e. is31Flavors(originalFlavors) will return TRUE.*/
 
 
 function is31Flavors(items) {
+    
     if(items.length === 31){
         return "true";
     }
@@ -61,6 +62,7 @@ For example addFlavor("Rainbow Sherbert", originalFlavors) should return ["Rainb
 
 
 function addFlavor(array,flavor){
+
     array.unshift(flavor);
     return array;
 }
@@ -91,13 +93,17 @@ Your function should accept:
 
 For example, getFlavorByIndex(originalFlavors, 2) would return "Black Walnut", assuming Rainbow Sherbert has been added successfully. */
 
-function getFlavorByIndex(array, index){
+function getFlavorByIndex(arr, index) {
 
-    flavor = array.find()
-    return flavor;
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[index] === true) {
+        }
+    }
+    return arr[index];
 }
 
-console.log(getFlavorByIndex(originalFlavors, 2));
+
+// console.log(getFlavorByIndex(originalFlavors, 2));
 
 /* Task 5: As corporate wants to add more and more flavors to their lineup, they've realized that they need to remove flavors based on flavor name, as opposed to just arbitrarily removing the first or last flavor. Your task is to get an index by flavor name, and remove that flavor from the array. 
 Your function should accept: 
@@ -125,6 +131,7 @@ Your function should accept:
 and should return a new array that is identical to the old array. You can name the new array however you'd like. */
 
 function copy(array, newArray){
+
     newArray = array.slice(0);
     return newArray;
 }
