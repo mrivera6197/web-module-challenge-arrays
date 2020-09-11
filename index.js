@@ -39,7 +39,7 @@ i.e. is31Flavors(originalFlavors) will return TRUE.*/
 
 
 function is31Flavors(items) {
-    
+
     if(items.length === 31){
         return "true";
     }
@@ -161,7 +161,7 @@ function filterByWord(arr, str) {
     return filteredArray;
 }
 
-// console.log(filterByWord(originalFlavors, "Chocolate"))
+console.log(filterByWord(originalFlavors, "Chocolate"))
 
 
 /* 🧁🍦🍨 STRETCH 🍨🍦🍫*/ 
@@ -169,26 +169,29 @@ function filterByWord(arr, str) {
 /* STRETCH 1: Write a function that returns the average number of words in an array. You should be able to use this function for any array, but can test with originalFlavors.
 
 Your function should accept: 
-
 (1) an array
-
 and should return the average number of words per item in the array. 
-
 For example, getAverageWordLength(originalFlavors) should return a number between 0 and 3. */
 
-function getAverageWordLength(/*code here*/){
 
-    /*code here*/
 
+function getAverageWordLength(arr){
+    words = arr.length
+
+    for (i = 0; i < arr.length; i++){
+        for (j = 0; j < arr[i].length; j++)
+        if (arr[i][j].includes(" ")){
+            words++ 
+        }
+    }
+    return (words/arr.length);
 }
 
+// console.log(getAverageWordLength(originalFlavors));
 
 /* STRETCH 2: Baskin Robins now offers new flavors, seasonal flavors, and even regional flavors. Write a function that will randomly select a total of 31 flavors from originalFlavors, currentFlavors, seasonalFlavors, and regionalFlavors.
-
 Your function should accept 4 different arrays,
-
 and should return a new array called randomFlavors with a length 31.
-
 forExample, getRandomFlavors(originalFlavors, newFlavors, seasonalFlavors, regionalFlavors) might return ["Strawberry Cheesecake", "Eggnog,"..."Chocolate"].*/
 
 // Data ⬇️
@@ -264,8 +267,13 @@ var regionalFlavors = ["Pink Bubblegum",
     "Chocolate Chocolate Chip Cheesecake",
     "Caramel 'n' Cookies"]
 
-// function getRandomFlavors(/*code here*/){
+function getRandomFlavors(arr1, arr2, arr3, arr4){
+    
+    let combinedArray = arr1.concat(arr2, arr3, arr4);
+    let shuffledArray = shuffle(combinedArray);
+    return shuffledArray;
 
-//     /*code here*/
+}
 
-// }
+ console.log(getRandomFlavors(originalFlavors, newFlavors, seasonalFlavors, regionalFlavors));
+
